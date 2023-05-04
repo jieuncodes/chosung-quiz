@@ -44,7 +44,6 @@ function showNextHint() {
   currentHintIndex += 1;
 }
 
-
 function countdown(seconds) {
   return new Promise((resolve) => {
     countdownDisplay.style.display = "flex";
@@ -64,7 +63,6 @@ function countdown(seconds) {
     }, 1000);
   });
 }
-
 async function checkAnswer() {
   const currentChosung = quizArea.textContent;
   const correctAnswer = chosungData.find(
@@ -73,18 +71,19 @@ async function checkAnswer() {
   const userAnswer = answerInput.value.trim();
 
   if (userAnswer === correctAnswer) {
-    resultDisplay.textContent = `정답입니다! 🎁 당신의 상품 번호는....`;
-    resultDisplay.style.display = "block";
-    resultDisplay.style.backgroundColor = "black";
-    resultDisplay.style.color = "white";
+    resultDisplay.textContent = `정답입니다!`;
+    resultDisplay.style.backgroundColor = "green";
 
-    quizArea.textContent = await giftLottery();
+    setTimeout(async () => {
+      quizArea.textContent = await giftLottery();
+    }, 100);
   } else {
     resultDisplay.textContent = `땡!`;
-    resultDisplay.style.display = "block";
-    resultDisplay.style.backgroundColor = "black";
-    resultDisplay.style.color = "white";
+    resultDisplay.style.backgroundColor = "red";
   }
+
+  resultDisplay.style.display = "block";
+  resultDisplay.style.color = "white";
   answerInput.value = "";
 }
 
@@ -94,8 +93,7 @@ function easeOutCubic(t) {
   return 1 - Math.pow(1 - t, 3);
 }
 
-
-function animateGiftNumber(duration) {
+function animateGiftNumber(duration, excludedNumbers = []) {
   return new Promise((resolve) => {
     const startTime = performance.now();
 
@@ -104,22 +102,23 @@ function animateGiftNumber(duration) {
       const progress = (currentTime - startTime) / duration;
       const easedProgress = easeOutCubic(progress);
 
-      const randomNumber = Math.floor(Math.random() * 20) + 1;
+      let randomNumber;
+      do {
+        randomNumber = Math.floor(Math.random() * 20) + 1;
+      } while (excludedNumbers.includes(randomNumber));
       quizArea.textContent = `${randomNumber}`;
 
       if (progress < 1) {
         const delay = 100 * (1 + easedProgress * 9);
         setTimeout(updateNumber, delay);
       } else {
-        resolve();
+        resolve(randomNumber);
       }
     };
 
     updateNumber();
   });
 }
-
-
 
 async function giftLottery() {
   let giftNumber;
@@ -129,10 +128,11 @@ async function giftLottery() {
   usedGiftNumbers.push(giftNumber);
 
   await animateGiftNumber(5000);
+  const winningNumber = await animateGiftNumber(3000, usedGiftNumbers);
+  usedGiftNumbers.push(winningNumber);
 
   return `🎉 ${giftNumber} 🎉 `;
 }
-
 
 async function startGame() {
   resultDisplay.style.display = "none";
@@ -147,7 +147,6 @@ async function startGame() {
 
   currentHintIndex = 0;
 }
-
 
 const startBtn = document.getElementById("start-btn");
 const welcomeContainer = document.getElementById("welcome-container");

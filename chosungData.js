@@ -1,4 +1,36 @@
-export const chosungData = [
+export const chosungData = [ 
+   {
+    chosung: "ㅅㅇㅇ ㄷ",
+    word: "서울의 달",
+    hint1: "노래",
+    hint2: "우리나라의 수도",
+    hint3: "지구와 O",
+  },{
+  chosung: "ㄴㅇㅂㅂㄷ",
+  word: "네이버밴드",
+  hint1: "스마트폰",
+  hint2: "정늠인이 모이는곳",
+},
+  {
+    chosung: "ㅊㄱㅇ",
+    word: "청기와",
+    hint1: "지붕",
+    hint2: "파란색",
+    hint3: "옛날 외갓집, 민섭이 지섭이에게는 할머니집"
+  },
+  {
+    chosung: "ㅅㅇㅇ ㄷ",
+    word: "서울의 달",
+    hint1: "노래",
+    hint2: "우리나라의 수도",
+    hint3: "지구와 O",
+  },
+  {
+    chosung: "ㅅㅋㄹㅌㅅ",
+    word: "소크라테스",
+    hint1: "너 자신을 알라",
+    hint2: "철학자",
+  },
     {
       chosung: "ㅈㄴㅇ",
       word: "정늠인",
@@ -53,7 +85,50 @@ export const chosungData = [
     {
       chosung: "ㄷㅇㄴㅁㅇㅌ",
       word: "다이너마이트",
-      hint1: "너무 매워",
+      hint1: "한류열풍",
       hint2: "BTS",
+    },
+    {
+      chosung: "ㄷㄱㅁㅅ",
+      word: "대기만성",
+      hint1: "사자성어",
+      hint2: "큰 그릇은....",
+      hint3: "큰 인물이 되려면 많은 시간이 필요하다",
+    },
+    {
+      chosung: "ㄴㅂㄷㅂ",
+      word: "노발대발",
+      hint1: "노래한 손님이 주문한 음식에서 벌레가 나왔다고...OOOO했다.",
+      hint2: "펄펄뛰다",
+      hint3: "몹씨 성내다",
+    },
+    {
+      chosung: "ㄴㄴㄸㄴ",
+      word: "누네띠네",
+      hint1: "체크무늬",
+      hint2: "추억의",
+      hint3: "과자",
+    },
+    {
+      chosung: "ㅇㄷㅎㄹㅇㄱㅍㅍ",
+      word: "응답하라1988",
+      hint1: "지나간것은~~ 지나간대로~~",
+      hint2: "진주",
+      hint3: "덕선이",
+    },
+
+    {
+      chosung: "ㅇㅌㅇㅋㄹㅅ",
+      word: "이태원클라스",
+      hint1: "드라마",
+      hint2: "술집장사",
+      hint3: "박새로이",
+    },
+    {
+      chosung: "ㅇㅎㅇㅊ",
+      word: "완행열차",
+      hint1: "장윤정",
+      hint2: "목포행",
+      hint3: "느리게 칙칙폭폭",
     },
   ];
