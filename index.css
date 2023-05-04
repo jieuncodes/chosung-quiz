@@ -1,0 +1,142 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#game-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    width: 80vw;
+    height: 80vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    margin-bottom: 1rem;
+    position: absolute;
+    top: 60px;
+    color: rgba(0, 0, 0, 0.521);
+}
+
+#quiz-area {
+    font-weight: bold;
+    text-align: center;
+    font-size: 200px;
+    margin-top: -100px;
+    background-color: white;
+    line-height: 160px;
+}
+
+#answer-input {
+    height: 40px;
+    width: 370px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-color: #45a049;
+    font-size: 50px;
+    bottom: 180px;
+    position: absolute;
+}
+
+:focus {
+    outline: none;
+}
+
+#button-container {
+    position: absolute;
+    bottom: 100px;
+    display: flex;
+    width: 400px;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+#hint-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    height: 50px;
+    width: 120px;
+    font-size: larger;
+    margin-top: 50px;
+
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+
+
+#countdown-display {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20rem;
+    color: red;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.598);
+}
+
+
+#result-display {
+    position: fixed;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 11;
+    display: none;
+    font-size: 50px;
+    width: 83vw;
+    top: 44px;
+
+}
+
+#answer-input {
+    margin-bottom: 1rem;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+.right-answer {
+    background-color: rgba(0, 255, 0, 0.3);
+}
+
+.wrong-answer {
+    background-color: rgba(255, 0, 0, 0.3);
+}
+
+#gift-lottery-display {
+    margin-top: 1rem;
+    font-weight: bold;
+}
